@@ -167,15 +167,7 @@ struct information* get_info(char* name){
     if (strlen(string) != 0)
         columns++;
 
-
-
-
-    //token = strtok(string, ",");
-    //while (token){
-    //    columns++; 
-    //    token = strtok(NULL,",");
-    //}
-    info->columns = columns;
+   info->columns = columns;
 
     //Descobre os tipos
     fgets(string, MAX - 1, file);
@@ -187,33 +179,7 @@ struct information* get_info(char* name){
 
     rest = string;
     cols = 0;
-//    while ((token = strchr(rest,',')) != NULL) {
-//        *token = '\0';
-//        double value = atof(rest);
-//        if (value == 0)
-//            info->types[cols] = STRING;
-//        else 
-//            info->types[cols] = NUMBER;
-//        rest = token + 1;
-//        cols++;
-//        if (rest[0] == ',') {
-//            info->types[cols] = NUMBER;
-//            cols++;
-//            rest = token + 1;
-//        }
-//
-//    }
-//    if (strlen(string) != 0){
-//        double value = atof(rest);
-//        if (value == 0)
-//            info->types[cols] = STRING;
-//        else if (strlen(rest) == 0)
-//            info->types[cols] = NUMBER;
-//        else 
-//            info->types[cols] = NUMBER;
-//        cols++;
-//    }
-        
+       
     while (rest != NULL && *rest != '\0') {
         char *token = strchr(rest, ',');
         if (token != NULL) {
@@ -239,22 +205,7 @@ struct information* get_info(char* name){
             rest = NULL;
         }
     }
-
-
-
-
-   // token = strtok(string, ",");
-   // cols = 0;
-   // while (token){
-   //     double value = atof(token);
-   //     if (value == 0)
-   //         info->types[cols] = STRING;
-   //     else 
-   //         info->types[cols] = NUMBER;
-   //     token = strtok(NULL,",");
-   //     cols++;
-   // }
-    rewind(file);
+   rewind(file);
 
     //Achar a maior palavra
     string_size = 0;
@@ -333,6 +284,11 @@ void destroy_info(struct information** info){
     }
 }
 //---------- Funções Pequenas --------------------------------------
+
+
+
+
+
 
 //fff
 int print_line(struct information* info, int line){

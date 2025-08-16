@@ -54,6 +54,7 @@ int find_missing(struct information** info);
 int save_data(struct information** info);
 
 //---------- Funções de Informações Gerais --------------
+
 int* biggest_words(char*** file_data, int lines, int columns);
 
 char*** allocate_file_data( int lines, int columns);
